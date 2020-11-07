@@ -71,7 +71,7 @@ extension TaskListViewController {
   }
   
   func configureTableView() {
-    tableView.register(UITableViewCell.self, forCellReuseIdentifier: tableViewDataSource.cellIdentifier)
+    tableView.register(UITableViewCell.self, forCellReuseIdentifier: TaskListTableViewDataSource.cellIdentifier)
     tableView.dataSource = tableViewDataSource
     tableView.delegate = tableViewDelegate
   }
