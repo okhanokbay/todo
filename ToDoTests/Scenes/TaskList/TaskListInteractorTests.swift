@@ -1,14 +1,13 @@
 //
-//  todoTests.swift
+//  TaskListInteractorTests.swift
 //  todoTests
 //
-//  Created by Okhan Okbay on 7.11.2020.
+//  Created by Okhan Okbay on 8.11.2020.
 //
 
 import XCTest
-@testable import todo
 
-class todoTests: XCTestCase {
+class TaskListInteractorTests: XCTestCase {
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.

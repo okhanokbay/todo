@@ -79,8 +79,9 @@ extension TaskListInteractor {
   }
   
   private func editTaskHandler(with description: String?) {
-    guard let description = description else {
-      print("Text is nil, thus not editing the task")
+    guard let description = description,
+          description.count > 0 else {
+      print("Text is nil or empty, thus not editing the task")
       return
     }
     
@@ -91,6 +92,7 @@ extension TaskListInteractor {
     
     CoreDataStack.shared.update(task: editingTask, with: description)
     updateTasks()
+    dataStore.editingTask = nil
   }
   
   private func updateTasks() {
