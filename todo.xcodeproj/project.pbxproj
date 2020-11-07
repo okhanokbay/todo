@@ -133,9 +133,10 @@
 		1615482B2556F0A400444B87 /* todo */ = {
 			isa = PBXGroup;
 			children = (
-				161548762556FDE900444B87 /* Shared */,
-				161548752556FDE400444B87 /* Scenes */,
 				161548742556FDCD00444B87 /* Main */,
+				161548752556FDE400444B87 /* Scenes */,
+				161548762556FDE900444B87 /* Shared */,
+				1615483D2556F0A600444B87 /* Info.plist */,
 			);
 			path = todo;
 			sourceTree = "<group>";
@@ -174,7 +175,6 @@
 				1615482E2556F0A400444B87 /* SceneDelegate.swift */,
 				161548382556F0A600444B87 /* Assets.xcassets */,
 				1615483A2556F0A600444B87 /* LaunchScreen.storyboard */,
-				1615483D2556F0A600444B87 /* Info.plist */,
 			);
 			path = Main;
 			sourceTree = "<group>";

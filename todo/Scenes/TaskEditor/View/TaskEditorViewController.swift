@@ -35,16 +35,14 @@ final class TaskEditorViewController: UIViewController {
   // MARK: Setup
   
   private func setup() {
-    let viewController = self
-    let interactor = TaskEditorInteractor()
-    let presenter = TaskEditorPresenter()
-    let router = TaskEditorRouter()
-    viewController.interactor = interactor
-    viewController.router = router
-    interactor.presenter = presenter
-    presenter.viewController = viewController
-    router.viewController = viewController
-    router.dataStore = interactor
+    let dataStore = TaskEditorDataStore()
+    let worker = TaskEditorWorker()
+    let presenter = TaskEditorPresenter(displayer: self)
+    let interactor = TaskEditorInteractor(dataStore: dataStore, worker: worker, presenter: presenter)
+    let router = TaskEditorRouter(dataStore: dataStore, viewController: self)
+
+    self.interactor = interactor
+    self.router = router
   }
 }
 
