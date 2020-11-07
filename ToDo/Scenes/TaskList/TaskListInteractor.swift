@@ -57,11 +57,11 @@ extension TaskListInteractor: TaskListBusinessLogic {
   
   func deleteTask(request: TaskList.DeleteTask.Request) {
     let taskToDelete = dataStore.tasks[request.index]
-    dataStore.tasks.remove(at: request.index)
     CoreDataStack.shared.delete(task: taskToDelete)
+    dataStore.tasks = CoreDataStack.shared.fetchTasks()
     
-    let response = TaskList.DeleteTask.Response()
-    presenter.presentTaskDeletion(response: response)
+    let response = TaskList.DeleteTask.Response(tasks: dataStore.tasks)
+    presenter.presentTasks(response: response)
   }
 }
 

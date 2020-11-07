@@ -12,8 +12,9 @@
 
 import Foundation
 
+// MARK: Use cases
+
 enum TaskList {
-  
   struct TaskCellViewModel {
     let description: String
     
@@ -22,10 +23,10 @@ enum TaskList {
     }
   }
   
-  // MARK: Use cases
+  // MARK: Initialization
   
-  enum FetchTasks {
-    struct Request {}
+  enum TaskInitialization {
+    class Request {}
     
     struct Response {
       let tasks: [Task]
@@ -35,6 +36,24 @@ enum TaskList {
       let cellViewModels: [TaskCellViewModel]
     }
   }
+  
+  typealias FetchTasks = TaskInitialization
+  
+  enum DeleteTask {
+    class Request: TaskInitialization.Request {
+      let index: Int
+      
+      init(index: Int) {
+        self.index = index
+        super.init()
+      }
+    }
+    
+    typealias Response = TaskInitialization.Response
+    typealias ViewModel = TaskInitialization.ViewModel
+  }
+  
+  // MARK: Operations
   
   enum TaskOperation {
     class Request {}
@@ -84,16 +103,6 @@ enum TaskList {
         super.init(response: response)
       }
     }
-  }
-  
-  enum DeleteTask {
-    struct Request {
-      let index: Int
-    }
-    
-    struct Response {}
-    
-    struct ViewModel {}
   }
 }
 

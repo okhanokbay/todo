@@ -114,6 +114,7 @@ extension TaskListViewController: TaskListDisplayLogic {
   }
   
   func displayTaskDeletion(viewModel: TaskList.DeleteTask.ViewModel) {
-    print("Task deleted")
+    tableViewDataSource.cellViewModels = viewModel.cellViewModels
+    tableView.reloadData()
   }
 }

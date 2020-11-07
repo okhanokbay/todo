@@ -16,7 +16,6 @@ protocol TaskListPresentationLogic: AnyObject {
   func presentTasks(response: TaskList.FetchTasks.Response)
   func presentNewTaskAddition(response: TaskList.AddNewTask.Response)
   func presentTaskEditing(response: TaskList.EditTask.Response)
-  func presentTaskDeletion(response: TaskList.DeleteTask.Response)
 }
 
 final class TaskListPresenter {
@@ -42,10 +41,5 @@ extension TaskListPresenter: TaskListPresentationLogic {
   func presentTaskEditing(response: TaskList.EditTask.Response) {
     let viewModel = TaskList.EditTask.ViewModel(response: response)
     displayer?.displayTaskEditing(viewModel: viewModel)
-  }
-  
-  func presentTaskDeletion(response: TaskList.DeleteTask.Response) {
-    let viewModel = TaskList.DeleteTask.ViewModel()
-    displayer?.displayTaskDeletion(viewModel: viewModel)
   }
 }
