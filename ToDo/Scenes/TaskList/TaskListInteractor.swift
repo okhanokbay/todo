@@ -68,7 +68,7 @@ extension TaskListInteractor: TaskListBusinessLogic {
 // MARK: Operations
 
 extension TaskListInteractor {
-  private func addTaskHandler(with description: String?) {
+  func addTaskHandler(with description: String?) {
     guard let description = description else {
       print("Text is nil, thus not added as a new task")
       return
@@ -78,7 +78,7 @@ extension TaskListInteractor {
     updateTasks()
   }
   
-  private func editTaskHandler(with description: String?) {
+  func editTaskHandler(with description: String?) {
     guard let description = description,
           description.count > 0 else {
       print("Text is nil or empty, thus not editing the task")
@@ -95,7 +95,7 @@ extension TaskListInteractor {
     dataStore.editingTask = nil
   }
   
-  private func updateTasks() {
+  func updateTasks() {
     dataStore.tasks = CoreDataStack.shared.fetchTasks()
     
     let response = TaskList.FetchTasks.Response(tasks: dataStore.tasks)
