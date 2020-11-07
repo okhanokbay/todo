@@ -13,11 +13,87 @@
 import Foundation
 
 enum TaskList {
+  
+  struct TaskCellViewModel {
+    let description: String
+    
+    init(task: Task) {
+      description = task.taskDescription
+    }
+  }
+  
   // MARK: Use cases
   
   enum FetchTasks {
     struct Request {}
+    
+    struct Response {
+      let tasks: [Task]
+    }
+    
+    struct ViewModel {
+      let cellViewModels: [TaskCellViewModel]
+    }
+  }
+  
+  enum TaskOperation {
+    class Request {}
+    
+    class Response {
+      let handler: TextHandler
+      
+      init(handler: @escaping TextHandler) {
+        self.handler = handler
+      }
+    }
+    
+    class ViewModel {
+      let handler: (String?) -> Void
+      
+      init(response: Response) {
+        handler = response.handler
+      }
+    }
+  }
+  
+  typealias AddNewTask = TaskOperation
+  
+  enum EditTask {
+    class Request: TaskOperation.Request {
+      let index: Int
+      
+      init(index: Int) {
+        self.index = index
+      }
+    }
+    
+    class Response: TaskOperation.Response {
+      let initialText: String
+      
+      init(initialText: String, handler: @escaping TextHandler) {
+        self.initialText = initialText
+        super.init(handler: handler)
+      }
+    }
+    
+    class ViewModel: TaskOperation.ViewModel {
+      let initialText: String
+      
+      init(response: Response) {
+        initialText = response.initialText
+        super.init(response: response)
+      }
+    }
+  }
+  
+  enum DeleteTask {
+    struct Request {
+      let index: Int
+    }
+    
     struct Response {}
+    
     struct ViewModel {}
   }
 }
+

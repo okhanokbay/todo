@@ -13,25 +13,31 @@
 import UIKit
 
 protocol TaskListRoutingLogic: AnyObject {
-  
+  func routeToTaskEditor(viewModel: TaskList.AddNewTask.ViewModel)
+  func routeToTaskEditorForEditing(viewModel: TaskList.EditTask.ViewModel)
 }
 
-protocol TaskListDataPassing {
-  var dataStore: TaskListDataStoreProtocol { get }
-}
-
-final class TaskListRouter: TaskListDataPassing {
-  var dataStore: TaskListDataStoreProtocol
+final class TaskListRouter {
   private weak var viewController: TaskListViewController?
   
-  init(dataStore: TaskListDataStoreProtocol,
-       viewController: TaskListViewController) {
-    
-    self.dataStore = dataStore
+  init(viewController: TaskListViewController) {
     self.viewController = viewController
   }
 }
 
 extension TaskListRouter: TaskListRoutingLogic {
+  func routeToTaskEditor(viewModel: TaskList.AddNewTask.ViewModel) {
+    routeToTaskEditor(handler: viewModel.handler)
+  }
   
+  func routeToTaskEditorForEditing(viewModel: TaskList.EditTask.ViewModel) {
+    routeToTaskEditor(handler: viewModel.handler, initialText: viewModel.initialText)
+  }
+  
+  private func routeToTaskEditor(handler: @escaping (String?) -> Void, initialText: String? = nil) {
+    let taskEditor: TaskEditorViewController = .loadFromNib()
+    taskEditor.taskEditorOperationEnded = handler
+    taskEditor.initialText = initialText
+    viewController?.navigationController?.pushViewController(taskEditor, animated: true)
+  }
 }

@@ -13,24 +13,90 @@
 import Foundation
 
 protocol TaskListBusinessLogic: AnyObject {
-  
+  func fetchTasks(request: TaskList.FetchTasks.Request)
+  func addNewTask(request: TaskList.AddNewTask.Request)
+  func editTask(request: TaskList.EditTask.Request)
+  func deleteTask(request: TaskList.DeleteTask.Request)
 }
 
 final class TaskListInteractor {
   private let dataStore: TaskListDataStoreProtocol
-  private let worker: TaskListWorkerProtocol
   private let presenter: TaskListPresentationLogic
   
   init(dataStore: TaskListDataStoreProtocol,
-       worker: TaskListWorkerProtocol,
        presenter: TaskListPresentationLogic) {
     
     self.dataStore = dataStore
-    self.worker = worker
     self.presenter = presenter
   }
 }
 
+// MARK: Business Logic
+
 extension TaskListInteractor: TaskListBusinessLogic {
+  func fetchTasks(request: TaskList.FetchTasks.Request) {
+    let tasks = CoreDataStack.shared.fetchTasks()
+    dataStore.tasks = tasks
+    
+    let response = TaskList.FetchTasks.Response(tasks: tasks)
+    presenter.presentTasks(response: response)
+  }
   
+  func addNewTask(request: TaskList.AddNewTask.Request) {
+    let response = TaskList.AddNewTask.Response(handler: addTaskHandler)
+    presenter.presentNewTaskAddition(response: response)
+  }
+  
+  func editTask(request: TaskList.EditTask.Request) {
+    dataStore.editingTask = dataStore.tasks[request.index]
+    
+    // Force unwrapping here, because we are sure that the dataStore has editingTask
+    let response = TaskList.EditTask.Response(initialText: dataStore.editingTask!.taskDescription, handler: editTaskHandler)
+    presenter.presentTaskEditing(response: response)
+  }
+  
+  func deleteTask(request: TaskList.DeleteTask.Request) {
+    let taskToDelete = dataStore.tasks[request.index]
+    dataStore.tasks.remove(at: request.index)
+    CoreDataStack.shared.delete(task: taskToDelete)
+    
+    let response = TaskList.DeleteTask.Response()
+    presenter.presentTaskDeletion(response: response)
+  }
+}
+
+// MARK: Operations
+
+extension TaskListInteractor {
+  private func addTaskHandler(with description: String?) {
+    guard let description = description else {
+      print("Text is nil, thus not added as a new task")
+      return
+    }
+    
+    CoreDataStack.shared.saveTask(description: description)
+    updateTasks()
+  }
+  
+  private func editTaskHandler(with description: String?) {
+    guard let description = description else {
+      print("Text is nil, thus not editing the task")
+      return
+    }
+    
+    guard let editingTask = dataStore.editingTask else {
+      print("Editing task not found")
+      return
+    }
+    
+    CoreDataStack.shared.update(task: editingTask, with: description)
+    updateTasks()
+  }
+  
+  private func updateTasks() {
+    dataStore.tasks = CoreDataStack.shared.fetchTasks()
+    
+    let response = TaskList.FetchTasks.Response(tasks: dataStore.tasks)
+    presenter.presentTasks(response: response)
+  }
 }

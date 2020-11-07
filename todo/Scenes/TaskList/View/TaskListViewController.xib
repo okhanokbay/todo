@@ -10,6 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TaskListViewController" customModule="todo" customModuleProvider="target">
             <connections>
+                <outlet property="tableView" destination="whV-qD-aHd" id="Asa-1A-ISi"/>
                 <outlet property="view" destination="Pds-v6-yza" id="hoO-XU-EJc"/>
             </connections>
         </placeholder>
@@ -17,14 +18,26 @@
         <view contentMode="scaleToFill" id="Pds-v6-yza">
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="whV-qD-aHd">
+                    <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                </tableView>
+            </subviews>
             <viewLayoutGuide key="safeArea" id="fns-eF-L7X"/>
-            <color key="backgroundColor" systemColor="systemBlueColor"/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="whV-qD-aHd" firstAttribute="top" secondItem="fns-eF-L7X" secondAttribute="top" id="3gy-fm-96Q"/>
+                <constraint firstItem="fns-eF-L7X" firstAttribute="trailing" secondItem="whV-qD-aHd" secondAttribute="trailing" id="dB1-oE-jkx"/>
+                <constraint firstItem="whV-qD-aHd" firstAttribute="leading" secondItem="fns-eF-L7X" secondAttribute="leading" id="mWq-Y5-nXH"/>
+                <constraint firstItem="fns-eF-L7X" firstAttribute="bottom" secondItem="whV-qD-aHd" secondAttribute="bottom" id="neb-CP-deI"/>
+            </constraints>
             <point key="canvasLocation" x="-148" y="-490"/>
         </view>
     </objects>
     <resources>
-        <systemColor name="systemBlueColor">
-            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
     </resources>
 </document>

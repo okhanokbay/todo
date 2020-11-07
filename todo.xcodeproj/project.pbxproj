@@ -16,21 +16,19 @@
 		161548642556F11E00444B87 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 161548632556F11E00444B87 /* CoreDataStack.swift */; };
 		161548792556FE1200444B87 /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 161548782556FE1200444B87 /* UIViewController+Extensions.swift */; };
 		161548852556FE7100444B87 /* TaskListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1615487F2556FE7100444B87 /* TaskListPresenter.swift */; };
-		161548862556FE7100444B87 /* TaskListWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 161548802556FE7100444B87 /* TaskListWorker.swift */; };
 		161548872556FE7100444B87 /* TaskListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 161548812556FE7100444B87 /* TaskListRouter.swift */; };
 		161548882556FE7100444B87 /* TaskListModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 161548822556FE7100444B87 /* TaskListModels.swift */; };
 		161548892556FE7100444B87 /* TaskListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 161548832556FE7100444B87 /* TaskListViewController.swift */; };
 		1615488A2556FE7100444B87 /* TaskListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 161548842556FE7100444B87 /* TaskListInteractor.swift */; };
-		161548942556FE8000444B87 /* TaskEditorPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1615488E2556FE8000444B87 /* TaskEditorPresenter.swift */; };
-		161548952556FE8000444B87 /* TaskEditorWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1615488F2556FE8000444B87 /* TaskEditorWorker.swift */; };
-		161548962556FE8000444B87 /* TaskEditorRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 161548902556FE8000444B87 /* TaskEditorRouter.swift */; };
-		161548972556FE8000444B87 /* TaskEditorModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 161548912556FE8000444B87 /* TaskEditorModels.swift */; };
 		161548982556FE8000444B87 /* TaskEditorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 161548922556FE8000444B87 /* TaskEditorViewController.swift */; };
-		161548992556FE8000444B87 /* TaskEditorInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 161548932556FE8000444B87 /* TaskEditorInteractor.swift */; };
 		1615489F2556FEA300444B87 /* TaskListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1615489E2556FEA300444B87 /* TaskListViewController.xib */; };
 		161548A42556FF6300444B87 /* TaskListDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 161548A32556FF6300444B87 /* TaskListDataStore.swift */; };
+		16196BB825574EDF00199F43 /* TaskListTableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16196BB725574EDF00199F43 /* TaskListTableViewDelegate.swift */; };
+		1673774325575C2F00EE2441 /* GlobalTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1673774225575C2F00EE2441 /* GlobalTypes.swift */; };
 		168AB4EF2557029B00C05DD2 /* TaskEditorViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 168AB4EE2557029B00C05DD2 /* TaskEditorViewController.xib */; };
-		168AB4F4255702B000C05DD2 /* TaskEditorDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 168AB4F3255702B000C05DD2 /* TaskEditorDataStore.swift */; };
+		1691C3392557111B001B40B4 /* TaskListTableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1691C3382557111B001B40B4 /* TaskListTableViewDataSource.swift */; };
+		1691C34A25572465001B40B4 /* Task+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1691C34825572465001B40B4 /* Task+CoreDataClass.swift */; };
+		1691C34B25572465001B40B4 /* Task+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1691C34925572465001B40B4 /* Task+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,21 +55,19 @@
 		161548632556F11E00444B87 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		161548782556FE1200444B87 /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
 		1615487F2556FE7100444B87 /* TaskListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListPresenter.swift; sourceTree = "<group>"; };
-		161548802556FE7100444B87 /* TaskListWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListWorker.swift; sourceTree = "<group>"; };
 		161548812556FE7100444B87 /* TaskListRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListRouter.swift; sourceTree = "<group>"; };
 		161548822556FE7100444B87 /* TaskListModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListModels.swift; sourceTree = "<group>"; };
 		161548832556FE7100444B87 /* TaskListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListViewController.swift; sourceTree = "<group>"; };
 		161548842556FE7100444B87 /* TaskListInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListInteractor.swift; sourceTree = "<group>"; };
-		1615488E2556FE8000444B87 /* TaskEditorPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskEditorPresenter.swift; sourceTree = "<group>"; };
-		1615488F2556FE8000444B87 /* TaskEditorWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskEditorWorker.swift; sourceTree = "<group>"; };
-		161548902556FE8000444B87 /* TaskEditorRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskEditorRouter.swift; sourceTree = "<group>"; };
-		161548912556FE8000444B87 /* TaskEditorModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskEditorModels.swift; sourceTree = "<group>"; };
 		161548922556FE8000444B87 /* TaskEditorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskEditorViewController.swift; sourceTree = "<group>"; };
-		161548932556FE8000444B87 /* TaskEditorInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskEditorInteractor.swift; sourceTree = "<group>"; };
 		1615489E2556FEA300444B87 /* TaskListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TaskListViewController.xib; sourceTree = "<group>"; };
 		161548A32556FF6300444B87 /* TaskListDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListDataStore.swift; sourceTree = "<group>"; };
+		16196BB725574EDF00199F43 /* TaskListTableViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListTableViewDelegate.swift; sourceTree = "<group>"; };
+		1673774225575C2F00EE2441 /* GlobalTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalTypes.swift; sourceTree = "<group>"; };
 		168AB4EE2557029B00C05DD2 /* TaskEditorViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TaskEditorViewController.xib; sourceTree = "<group>"; };
-		168AB4F3255702B000C05DD2 /* TaskEditorDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskEditorDataStore.swift; sourceTree = "<group>"; };
+		1691C3382557111B001B40B4 /* TaskListTableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListTableViewDataSource.swift; sourceTree = "<group>"; };
+		1691C34825572465001B40B4 /* Task+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Task+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
+		1691C34925572465001B40B4 /* Task+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Task+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,6 +129,8 @@
 		161548622556F10C00444B87 /* PersistenceLayer */ = {
 			isa = PBXGroup;
 			children = (
+				1691C34825572465001B40B4 /* Task+CoreDataClass.swift */,
+				1691C34925572465001B40B4 /* Task+CoreDataProperties.swift */,
 				161548352556F0A400444B87 /* todo.xcdatamodeld */,
 				161548632556F11E00444B87 /* CoreDataStack.swift */,
 			);
@@ -164,6 +162,7 @@
 			children = (
 				161548772556FDFB00444B87 /* Extensions */,
 				161548622556F10C00444B87 /* PersistenceLayer */,
+				1673774225575C2F00EE2441 /* GlobalTypes.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -182,7 +181,6 @@
 				1615489D2556FE8900444B87 /* View */,
 				161548822556FE7100444B87 /* TaskListModels.swift */,
 				161548A32556FF6300444B87 /* TaskListDataStore.swift */,
-				161548802556FE7100444B87 /* TaskListWorker.swift */,
 				161548842556FE7100444B87 /* TaskListInteractor.swift */,
 				1615487F2556FE7100444B87 /* TaskListPresenter.swift */,
 				161548812556FE7100444B87 /* TaskListRouter.swift */,
@@ -193,13 +191,8 @@
 		1615487E2556FE3800444B87 /* TaskEditor */ = {
 			isa = PBXGroup;
 			children = (
-				168AB4ED2557028700C05DD2 /* View */,
-				161548912556FE8000444B87 /* TaskEditorModels.swift */,
-				168AB4F3255702B000C05DD2 /* TaskEditorDataStore.swift */,
-				1615488F2556FE8000444B87 /* TaskEditorWorker.swift */,
-				161548932556FE8000444B87 /* TaskEditorInteractor.swift */,
-				1615488E2556FE8000444B87 /* TaskEditorPresenter.swift */,
-				161548902556FE8000444B87 /* TaskEditorRouter.swift */,
+				161548922556FE8000444B87 /* TaskEditorViewController.swift */,
+				168AB4EE2557029B00C05DD2 /* TaskEditorViewController.xib */,
 			);
 			path = TaskEditor;
 			sourceTree = "<group>";
@@ -207,17 +200,10 @@
 		1615489D2556FE8900444B87 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				1691C3382557111B001B40B4 /* TaskListTableViewDataSource.swift */,
+				16196BB725574EDF00199F43 /* TaskListTableViewDelegate.swift */,
 				161548832556FE7100444B87 /* TaskListViewController.swift */,
 				1615489E2556FEA300444B87 /* TaskListViewController.xib */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		168AB4ED2557028700C05DD2 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				161548922556FE8000444B87 /* TaskEditorViewController.swift */,
-				168AB4EE2557029B00C05DD2 /* TaskEditorViewController.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -324,22 +310,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				1615482D2556F0A400444B87 /* AppDelegate.swift in Sources */,
-				168AB4F4255702B000C05DD2 /* TaskEditorDataStore.swift in Sources */,
 				1615488A2556FE7100444B87 /* TaskListInteractor.swift in Sources */,
 				161548982556FE8000444B87 /* TaskEditorViewController.swift in Sources */,
-				161548942556FE8000444B87 /* TaskEditorPresenter.swift in Sources */,
+				1691C34B25572465001B40B4 /* Task+CoreDataProperties.swift in Sources */,
 				161548882556FE7100444B87 /* TaskListModels.swift in Sources */,
 				1615482F2556F0A400444B87 /* SceneDelegate.swift in Sources */,
 				161548792556FE1200444B87 /* UIViewController+Extensions.swift in Sources */,
+				16196BB825574EDF00199F43 /* TaskListTableViewDelegate.swift in Sources */,
 				161548642556F11E00444B87 /* CoreDataStack.swift in Sources */,
-				161548972556FE8000444B87 /* TaskEditorModels.swift in Sources */,
-				161548952556FE8000444B87 /* TaskEditorWorker.swift in Sources */,
+				1691C3392557111B001B40B4 /* TaskListTableViewDataSource.swift in Sources */,
 				161548372556F0A400444B87 /* todo.xcdatamodeld in Sources */,
-				161548862556FE7100444B87 /* TaskListWorker.swift in Sources */,
 				161548852556FE7100444B87 /* TaskListPresenter.swift in Sources */,
-				161548992556FE8000444B87 /* TaskEditorInteractor.swift in Sources */,
+				1691C34A25572465001B40B4 /* Task+CoreDataClass.swift in Sources */,
+				1673774325575C2F00EE2441 /* GlobalTypes.swift in Sources */,
 				161548872556FE7100444B87 /* TaskListRouter.swift in Sources */,
-				161548962556FE8000444B87 /* TaskEditorRouter.swift in Sources */,
 				161548A42556FF6300444B87 /* TaskListDataStore.swift in Sources */,
 				161548892556FE7100444B87 /* TaskListViewController.swift in Sources */,
 			);
