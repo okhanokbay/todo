@@ -8,8 +8,7 @@
 import UIKit
 
 final class TaskListTableViewDataSource: NSObject, UITableViewDataSource {
-  static let cellIdentifier = "TaskCell"
-  var cellViewModels: [TaskList.TaskCellViewModel] = []
+  var cellViewModels: [ItemCellViewModelable] = []
   
   private var cellDeletionHandler: (IndexPath) -> Void
   
@@ -22,13 +21,10 @@ final class TaskListTableViewDataSource: NSObject, UITableViewDataSource {
   }
   
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    let cell = tableView.dequeueReusableCell(withIdentifier: Self.cellIdentifier, for: indexPath)
+    let viewModel = cellViewModels[indexPath.row]
     
-    cell.textLabel?.text = cellViewModels[indexPath.row].description
-    
-    cell.textLabel?.numberOfLines = 0
-    cell.accessoryType = .disclosureIndicator
-    
+    let cell = tableView.dequeueReusableCell(withIdentifier: ItemTableViewCell.reuseIdentifier, for: indexPath) as! ItemTableViewCell
+    cell.configureCell(with: viewModel)
     return cell
   }
   

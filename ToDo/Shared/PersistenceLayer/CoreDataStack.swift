@@ -54,7 +54,7 @@ extension CoreDataStack {
 extension CoreDataStack: PersistenceLayer {
   func fetch() -> [Task] {
     let request = Task.createFetchRequest()
-    request.sortDescriptors = [NSSortDescriptor(keyPath: \Task.recordDate, ascending: true)]
+    request.sortDescriptors = [NSSortDescriptor(keyPath: \Task.recordDate, ascending: false)]
     return (try? persistentContainer.viewContext.fetch(request)) ?? []
   }
   
@@ -67,6 +67,7 @@ extension CoreDataStack: PersistenceLayer {
   
   func update(task: Task, with text: String) {
     task.taskDescription = text
+    task.recordDate = Date()
     saveContext()
   }
   

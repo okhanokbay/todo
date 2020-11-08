@@ -15,11 +15,11 @@ import Foundation
 // MARK: Use cases
 
 enum TaskList {
-  struct TaskCellViewModel {
-    let description: String
+  struct TaskCellViewModel: ItemCellViewModelable {
+    var labelText: String
     
     init(task: Task) {
-      description = task.taskDescription
+      labelText = task.taskDescription
     }
   }
   

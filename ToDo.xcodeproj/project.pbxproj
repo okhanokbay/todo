@@ -45,6 +45,11 @@
 		167377C5255802A700EE2441 /* ServiceLocator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 167377C4255802A700EE2441 /* ServiceLocator.swift */; };
 		1673781225580D6100EE2441 /* Task+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1673781025580D6100EE2441 /* Task+CoreDataProperties.swift */; };
 		1673781325580D6100EE2441 /* Task+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1673781125580D6100EE2441 /* Task+CoreDataClass.swift */; };
+		1673781925580E5F00EE2441 /* ItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1673781825580E5F00EE2441 /* ItemTableViewCell.swift */; };
+		1673781F25580E8200EE2441 /* ItemTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1673781E25580E8200EE2441 /* ItemTableViewCell.xib */; };
+		167378252558103200EE2441 /* ItemCellViewModelable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 167378242558103200EE2441 /* ItemCellViewModelable.swift */; };
+		1673782D255810F900EE2441 /* UITableViewCell+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1673782C255810F900EE2441 /* UITableViewCell+Extensions.swift */; };
+		167378312558127100EE2441 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 167378302558127100EE2441 /* UIView+Extensions.swift */; };
 		168AB4EF2557029B00C05DD2 /* TaskEditorViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 168AB4EE2557029B00C05DD2 /* TaskEditorViewController.xib */; };
 		1691C3392557111B001B40B4 /* TaskListTableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1691C3382557111B001B40B4 /* TaskListTableViewDataSource.swift */; };
 /* End PBXBuildFile section */
@@ -102,6 +107,11 @@
 		167377C4255802A700EE2441 /* ServiceLocator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceLocator.swift; sourceTree = "<group>"; };
 		1673781025580D6100EE2441 /* Task+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Task+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		1673781125580D6100EE2441 /* Task+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Task+CoreDataClass.swift"; sourceTree = "<group>"; };
+		1673781825580E5F00EE2441 /* ItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemTableViewCell.swift; sourceTree = "<group>"; };
+		1673781E25580E8200EE2441 /* ItemTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ItemTableViewCell.xib; sourceTree = "<group>"; };
+		167378242558103200EE2441 /* ItemCellViewModelable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCellViewModelable.swift; sourceTree = "<group>"; };
+		1673782C255810F900EE2441 /* UITableViewCell+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableViewCell+Extensions.swift"; sourceTree = "<group>"; };
+		167378302558127100EE2441 /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
 		168AB4EE2557029B00C05DD2 /* TaskEditorViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TaskEditorViewController.xib; sourceTree = "<group>"; };
 		1691C3382557111B001B40B4 /* TaskListTableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListTableViewDataSource.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -209,6 +219,8 @@
 			isa = PBXGroup;
 			children = (
 				161548782556FE1200444B87 /* UIViewController+Extensions.swift */,
+				1673782C255810F900EE2441 /* UITableViewCell+Extensions.swift */,
+				167378302558127100EE2441 /* UIView+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -242,8 +254,8 @@
 		1615489D2556FE8900444B87 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				1691C3382557111B001B40B4 /* TaskListTableViewDataSource.swift */,
-				16196BB725574EDF00199F43 /* TaskListTableViewDelegate.swift */,
+				1673781D25580E7000EE2441 /* TableViewCell */,
+				1673781C25580E6600EE2441 /* DataSourceAndDelegate */,
 				161548832556FE7100444B87 /* TaskListViewController.swift */,
 				1615489E2556FEA300444B87 /* TaskListViewController.xib */,
 			);
@@ -308,6 +320,25 @@
 				167377B22557722100EE2441 /* MockTaskEditorDisplayer.swift */,
 			);
 			path = Mocks;
+			sourceTree = "<group>";
+		};
+		1673781C25580E6600EE2441 /* DataSourceAndDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				1691C3382557111B001B40B4 /* TaskListTableViewDataSource.swift */,
+				16196BB725574EDF00199F43 /* TaskListTableViewDelegate.swift */,
+			);
+			path = DataSourceAndDelegate;
+			sourceTree = "<group>";
+		};
+		1673781D25580E7000EE2441 /* TableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				167378242558103200EE2441 /* ItemCellViewModelable.swift */,
+				1673781825580E5F00EE2441 /* ItemTableViewCell.swift */,
+				1673781E25580E8200EE2441 /* ItemTableViewCell.xib */,
+			);
+			path = TableViewCell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -394,6 +425,7 @@
 				1615489F2556FEA300444B87 /* TaskListViewController.xib in Resources */,
 				168AB4EF2557029B00C05DD2 /* TaskEditorViewController.xib in Resources */,
 				161548392556F0A600444B87 /* Assets.xcassets in Resources */,
+				1673781F25580E8200EE2441 /* ItemTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -425,14 +457,18 @@
 				1673778F255769B300EE2441 /* TaskEditorRouter.swift in Sources */,
 				167377C5255802A700EE2441 /* ServiceLocator.swift in Sources */,
 				1691C3392557111B001B40B4 /* TaskListTableViewDataSource.swift in Sources */,
+				167378312558127100EE2441 /* UIView+Extensions.swift in Sources */,
 				161548372556F0A400444B87 /* todo.xcdatamodeld in Sources */,
 				161548852556FE7100444B87 /* TaskListPresenter.swift in Sources */,
 				167377872557699F00EE2441 /* TaskEditorInteractor.swift in Sources */,
+				1673782D255810F900EE2441 /* UITableViewCell+Extensions.swift in Sources */,
+				1673781925580E5F00EE2441 /* ItemTableViewCell.swift in Sources */,
 				1673777D2557698C00EE2441 /* TaskEditorModels.swift in Sources */,
 				1673774325575C2F00EE2441 /* GlobalTypes.swift in Sources */,
 				1673778B255769AA00EE2441 /* TaskEditorPresenter.swift in Sources */,
 				161548872556FE7100444B87 /* TaskListRouter.swift in Sources */,
 				161548A42556FF6300444B87 /* TaskListDataStore.swift in Sources */,
+				167378252558103200EE2441 /* ItemCellViewModelable.swift in Sources */,
 				1673781225580D6100EE2441 /* Task+CoreDataProperties.swift in Sources */,
 				161548892556FE7100444B87 /* TaskListViewController.swift in Sources */,
 			);
