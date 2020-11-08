@@ -8,12 +8,12 @@
 import UIKit
 
 final class ItemTableViewCell: UITableViewCell {
+  @IBOutlet weak var containerView: UIView!
   @IBOutlet private weak var itemLabel: UILabel!
   
   override func awakeFromNib() {
     super.awakeFromNib()
   
-    itemLabel.numberOfLines = 0
     accessoryType = .disclosureIndicator
   }
   

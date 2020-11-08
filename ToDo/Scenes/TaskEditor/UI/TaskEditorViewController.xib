@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TaskEditorViewController" customModule="todo" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TaskEditorViewController" customModule="ToDo" customModuleProvider="target">
             <connections>
                 <outlet property="textView" destination="X4d-Qo-XsG" id="mPu-eb-gXa"/>
                 <outlet property="view" destination="oah-de-bi7" id="ana-82-FO9"/>
@@ -19,9 +19,12 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
-                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="X4d-Qo-XsG">
-                    <rect key="frame" x="20" y="44" width="374" height="818"/>
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="X4d-Qo-XsG">
+                    <rect key="frame" x="20" y="64" width="374" height="33"/>
                     <color key="backgroundColor" systemColor="systemGray6Color"/>
+                    <constraints>
+                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="ZBI-Yc-CQA"/>
+                    </constraints>
                     <color key="textColor" systemColor="labelColor"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -32,10 +35,9 @@
             <constraints>
                 <constraint firstItem="X4d-Qo-XsG" firstAttribute="leading" secondItem="NQ9-3q-RCW" secondAttribute="leading" constant="20" id="dOD-zd-fDW"/>
                 <constraint firstItem="NQ9-3q-RCW" firstAttribute="trailing" secondItem="X4d-Qo-XsG" secondAttribute="trailing" constant="20" id="hYK-4X-lwq"/>
-                <constraint firstItem="X4d-Qo-XsG" firstAttribute="top" secondItem="NQ9-3q-RCW" secondAttribute="top" id="t0G-Ld-gh3"/>
-                <constraint firstItem="NQ9-3q-RCW" firstAttribute="bottom" secondItem="X4d-Qo-XsG" secondAttribute="bottom" id="t4t-rd-S8K"/>
+                <constraint firstItem="X4d-Qo-XsG" firstAttribute="top" secondItem="NQ9-3q-RCW" secondAttribute="top" constant="20" id="t0G-Ld-gh3"/>
             </constraints>
-            <point key="canvasLocation" x="-324" y="77"/>
+            <point key="canvasLocation" x="-324.63768115942031" y="76.339285714285708"/>
         </view>
     </objects>
     <resources>
