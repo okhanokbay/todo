@@ -12,14 +12,8 @@ import CoreData
 
 final class CoreDataStack {
   static let shared: CoreDataStack = .init()
-
-  var injectedContainer: NSPersistentContainer?
   
   lazy var persistentContainer: NSPersistentContainer = {
-    if let injectedContainer = injectedContainer {
-      return injectedContainer
-    }
-    
     let container: NSPersistentContainer = .init(name: "todo")
     container.loadPersistentStores(completionHandler: { (_, error) in
       if let error = error {
@@ -52,7 +46,7 @@ extension CoreDataStack {
 // MARK: Core Data Helper Methods
 
 extension CoreDataStack: PersistenceLayer {
-  func fetch() -> [Task] {
+  func fetch() -> [TaskObject] {
     let request = Task.createFetchRequest()
     request.sortDescriptors = [NSSortDescriptor(keyPath: \Task.recordDate, ascending: false)]
     return (try? persistentContainer.viewContext.fetch(request)) ?? []
@@ -65,13 +59,17 @@ extension CoreDataStack: PersistenceLayer {
     saveContext()
   }
   
-  func update(task: Task, with text: String) {
+  func update(task: TaskObject, with text: String) {
     task.taskDescription = text
     task.recordDate = Date()
     saveContext()
   }
   
-  func delete(task: Task) {
+  func delete(task: TaskObject) {
+    guard let task = task as? Task else {
+      return
+    }
+    
     persistentContainer.viewContext.delete(task)
     saveContext()
   }

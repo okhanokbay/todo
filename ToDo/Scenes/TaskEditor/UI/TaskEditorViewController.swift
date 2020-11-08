@@ -34,7 +34,7 @@ final class TaskEditorViewController: UIViewController {
 
 // MARK: TaskEditorViewController Scoped Methods
 
-extension TaskEditorViewController {
+private extension TaskEditorViewController {
   func configureNavigationItem() {
     navigationItem.rightBarButtonItem = .init(barButtonSystemItem: .done, target: self, action: #selector(didTapDoneButton))
   }

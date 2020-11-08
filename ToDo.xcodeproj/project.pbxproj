@@ -52,6 +52,8 @@
 		167378312558127100EE2441 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 167378302558127100EE2441 /* UIView+Extensions.swift */; };
 		1673783A2558140400EE2441 /* TaskListEmptyStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 167378392558140400EE2441 /* TaskListEmptyStateView.swift */; };
 		167378412558142600EE2441 /* TaskListEmptyStateView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 167378402558142600EE2441 /* TaskListEmptyStateView.xib */; };
+		1673784625582EC200EE2441 /* MockPersistenceLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1673784525582EC200EE2441 /* MockPersistenceLayer.swift */; };
+		16737854255867F200EE2441 /* Task+TaskObjectConformance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16737853255867F200EE2441 /* Task+TaskObjectConformance.swift */; };
 		168AB4EF2557029B00C05DD2 /* TaskEditorViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 168AB4EE2557029B00C05DD2 /* TaskEditorViewController.xib */; };
 		1691C3392557111B001B40B4 /* TaskListTableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1691C3382557111B001B40B4 /* TaskListTableViewDataSource.swift */; };
 /* End PBXBuildFile section */
@@ -116,6 +118,8 @@
 		167378302558127100EE2441 /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
 		167378392558140400EE2441 /* TaskListEmptyStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListEmptyStateView.swift; sourceTree = "<group>"; };
 		167378402558142600EE2441 /* TaskListEmptyStateView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TaskListEmptyStateView.xib; sourceTree = "<group>"; };
+		1673784525582EC200EE2441 /* MockPersistenceLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockPersistenceLayer.swift; sourceTree = "<group>"; };
+		16737853255867F200EE2441 /* Task+TaskObjectConformance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Task+TaskObjectConformance.swift"; sourceTree = "<group>"; };
 		168AB4EE2557029B00C05DD2 /* TaskEditorViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TaskEditorViewController.xib; sourceTree = "<group>"; };
 		1691C3382557111B001B40B4 /* TaskListTableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListTableViewDataSource.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -170,6 +174,7 @@
 		161548452556F0A600444B87 /* ToDoTests */ = {
 			isa = PBXGroup;
 			children = (
+				1673784425582EB600EE2441 /* Shared */,
 				1673774625575FFD00EE2441 /* Scenes */,
 				161548482556F0A600444B87 /* Info.plist */,
 			);
@@ -184,6 +189,7 @@
 				161548632556F11E00444B87 /* CoreDataStack.swift */,
 				1673781125580D6100EE2441 /* Task+CoreDataClass.swift */,
 				1673781025580D6100EE2441 /* Task+CoreDataProperties.swift */,
+				16737853255867F200EE2441 /* Task+TaskObjectConformance.swift */,
 			);
 			path = PersistenceLayer;
 			sourceTree = "<group>";
@@ -363,6 +369,14 @@
 			path = EmptyStateView;
 			sourceTree = "<group>";
 		};
+		1673784425582EB600EE2441 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				1673784525582EC200EE2441 /* MockPersistenceLayer.swift */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -492,6 +506,7 @@
 				161548872556FE7100444B87 /* TaskListRouter.swift in Sources */,
 				161548A42556FF6300444B87 /* TaskListDataStore.swift in Sources */,
 				167378252558103200EE2441 /* ItemCellViewModelable.swift in Sources */,
+				16737854255867F200EE2441 /* Task+TaskObjectConformance.swift in Sources */,
 				1673781225580D6100EE2441 /* Task+CoreDataProperties.swift in Sources */,
 				161548892556FE7100444B87 /* TaskListViewController.swift in Sources */,
 				1673783A2558140400EE2441 /* TaskListEmptyStateView.swift in Sources */,
@@ -509,6 +524,7 @@
 				167377AB2557720600EE2441 /* MockTaskEditorInteractor.swift in Sources */,
 				167377B32557722100EE2441 /* MockTaskEditorDisplayer.swift in Sources */,
 				167377A1255771C700EE2441 /* MockTaskListInteractor.swift in Sources */,
+				1673784625582EC200EE2441 /* MockPersistenceLayer.swift in Sources */,
 				167377542557605600EE2441 /* MockTaskListDataStore.swift in Sources */,
 				167377492557601800EE2441 /* TaskListInteractorTests.swift in Sources */,
 				167377AF2557721400EE2441 /* MockTaskEditorPresenter.swift in Sources */,

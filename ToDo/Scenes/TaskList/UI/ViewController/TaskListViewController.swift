@@ -39,7 +39,7 @@ final class TaskListViewController: UIViewController {
 
 // MARK: TaskListViewController Scoped Methods
 
-extension TaskListViewController {
+private extension TaskListViewController {
   func configureNavigationItem() {
     navigationItem.rightBarButtonItem = .init(barButtonSystemItem: .add, target: self, action: #selector(didTapAddButton))
   }
@@ -101,7 +101,7 @@ extension TaskListViewController: TaskListDisplayLogic {
   }
 }
 
-extension TaskListViewController {
+private extension TaskListViewController {
   func handleEmptyState(for viewModels: [ItemCellViewModelable]) {
     tableView.backgroundView = viewModels.count == 0 ? TaskListEmptyStateView.loadFromNib() : nil
   }

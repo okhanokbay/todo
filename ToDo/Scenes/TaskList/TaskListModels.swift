@@ -18,7 +18,7 @@ enum TaskList {
   struct TaskCellViewModel: ItemCellViewModelable {
     var labelText: String
     
-    init(task: Task) {
+    init(task: TaskObject) {
       labelText = task.taskDescription
     }
   }
@@ -29,7 +29,7 @@ enum TaskList {
     class Request {}
     
     struct Response {
-      let tasks: [Task]
+      let tasks: [TaskObject]
     }
     
     struct ViewModel {

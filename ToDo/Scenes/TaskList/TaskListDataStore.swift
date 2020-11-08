@@ -8,11 +8,11 @@
 import Foundation
 
 protocol TaskListDataStoreProtocol: AnyObject {
-  var tasks: [Task] { get set }
-  var editingTask: Task? { get set }
+  var tasks: [TaskObject] { get set }
+  var editingTask: TaskObject? { get set }
 }
 
 final class TaskListDataStore: TaskListDataStoreProtocol {
-  var tasks: [Task] = []
-  var editingTask: Task?
+  var tasks: [TaskObject] = []
+  var editingTask: TaskObject?
 }
