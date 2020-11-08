@@ -31,7 +31,7 @@ extension TaskEditorInteractor: TaskEditorBusinessLogic {
   }
   
   func completeEntry(request: TaskEditor.CompleteEntry.Request) {
-    dataStore.taskEditorOperationEnded(request.text)
+    dataStore.taskEditorOperationDidEnd?(request.text)
     
     let response = TaskEditor.CompleteEntry.Response()
     presenter.presentEntryCompletion(response: response)

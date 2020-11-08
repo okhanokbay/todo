@@ -10,5 +10,5 @@ import Foundation
 
 final class MockTaskEditorDataStore: TaskEditorDataStoreProtocol {
   var initialText: String?
-  var taskEditorOperationEnded: TextHandler!
+  var taskEditorOperationDidEnd: TextHandler?
 }

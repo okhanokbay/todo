@@ -9,10 +9,10 @@ import Foundation
 
 protocol TaskEditorDataStoreProtocol: AnyObject {
   var initialText: String? { get set }
-  var taskEditorOperationEnded: TextHandler! { get set }
+  var taskEditorOperationDidEnd: TextHandler? { get set }
 }
 
 final class TaskEditorDataStore: TaskEditorDataStoreProtocol {
   var initialText: String?
-  var taskEditorOperationEnded: TextHandler!
+  var taskEditorOperationDidEnd: TextHandler?
 }

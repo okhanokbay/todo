@@ -38,7 +38,7 @@ extension TaskListRouter: TaskListRoutingLogic {
     let taskEditor: TaskEditorViewController = .loadFromNib()
     let dataStore = taskEditor.router.dataStore
     
-    dataStore.taskEditorOperationEnded = handler
+    dataStore.taskEditorOperationDidEnd = handler
     dataStore.initialText = initialText
     
     viewController?.navigationController?.pushViewController(taskEditor, animated: true)
