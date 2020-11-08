@@ -13,7 +13,7 @@ final class ItemTableViewCell: UITableViewCell {
   
   override func awakeFromNib() {
     super.awakeFromNib()
-  
+    
     accessoryType = .disclosureIndicator
   }
   
