@@ -35,8 +35,8 @@ final class TaskListTableViewDataSource: NSObject, UITableViewDataSource {
   func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
     if editingStyle == .delete {
       tableView.performBatchUpdates {
-      cellDeletionHandler(indexPath)
-      tableView.deleteRows(at: [indexPath], with: .automatic)
+        cellDeletionHandler(indexPath)
+        tableView.deleteRows(at: [indexPath], with: .automatic)
       }
     }
   }

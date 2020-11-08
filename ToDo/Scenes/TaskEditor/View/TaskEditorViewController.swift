@@ -22,10 +22,10 @@ final class TaskEditorViewController: UIViewController {
   
   private var interactor: TaskEditorBusinessLogic!
   var router: (TaskEditorRoutingLogic & TaskEditorDataPassing)!
-
+  
   override func viewDidLoad() {
     super.viewDidLoad()
-
+    
     configureNavigationItem()
     configureTextView()
   }
@@ -49,7 +49,7 @@ final class TaskEditorViewController: UIViewController {
     let presenter = TaskEditorPresenter(displayer: self)
     let interactor = TaskEditorInteractor(dataStore: dataStore, presenter: presenter)
     let router = TaskEditorRouter(dataStore: dataStore, viewController: self)
-
+    
     self.interactor = interactor
     self.router = router
   }
