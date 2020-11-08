@@ -37,6 +37,10 @@
 		16737797255771A700EE2441 /* TaskEditorInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16737796255771A700EE2441 /* TaskEditorInteractorTests.swift */; };
 		1673779D255771B100EE2441 /* TaskEditorPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1673779C255771B100EE2441 /* TaskEditorPresenterTests.swift */; };
 		167377A1255771C700EE2441 /* MockTaskListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 167377A0255771C700EE2441 /* MockTaskListInteractor.swift */; };
+		167377A7255771FC00EE2441 /* MockTaskEditorDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 167377A6255771FC00EE2441 /* MockTaskEditorDataStore.swift */; };
+		167377AB2557720600EE2441 /* MockTaskEditorInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 167377AA2557720600EE2441 /* MockTaskEditorInteractor.swift */; };
+		167377AF2557721400EE2441 /* MockTaskEditorPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 167377AE2557721400EE2441 /* MockTaskEditorPresenter.swift */; };
+		167377B32557722100EE2441 /* MockTaskEditorDisplayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 167377B22557722100EE2441 /* MockTaskEditorDisplayer.swift */; };
 		168AB4EF2557029B00C05DD2 /* TaskEditorViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 168AB4EE2557029B00C05DD2 /* TaskEditorViewController.xib */; };
 		1691C3392557111B001B40B4 /* TaskListTableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1691C3382557111B001B40B4 /* TaskListTableViewDataSource.swift */; };
 		1691C34A25572465001B40B4 /* Task+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1691C34825572465001B40B4 /* Task+CoreDataClass.swift */; };
@@ -88,6 +92,10 @@
 		16737796255771A700EE2441 /* TaskEditorInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskEditorInteractorTests.swift; sourceTree = "<group>"; };
 		1673779C255771B100EE2441 /* TaskEditorPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskEditorPresenterTests.swift; sourceTree = "<group>"; };
 		167377A0255771C700EE2441 /* MockTaskListInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockTaskListInteractor.swift; sourceTree = "<group>"; };
+		167377A6255771FC00EE2441 /* MockTaskEditorDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockTaskEditorDataStore.swift; sourceTree = "<group>"; };
+		167377AA2557720600EE2441 /* MockTaskEditorInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockTaskEditorInteractor.swift; sourceTree = "<group>"; };
+		167377AE2557721400EE2441 /* MockTaskEditorPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockTaskEditorPresenter.swift; sourceTree = "<group>"; };
+		167377B22557722100EE2441 /* MockTaskEditorDisplayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockTaskEditorDisplayer.swift; sourceTree = "<group>"; };
 		168AB4EE2557029B00C05DD2 /* TaskEditorViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TaskEditorViewController.xib; sourceTree = "<group>"; };
 		1691C3382557111B001B40B4 /* TaskListTableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListTableViewDataSource.swift; sourceTree = "<group>"; };
 		1691C34825572465001B40B4 /* Task+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Task+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
@@ -288,6 +296,10 @@
 		167377952557719900EE2441 /* Mocks */ = {
 			isa = PBXGroup;
 			children = (
+				167377A6255771FC00EE2441 /* MockTaskEditorDataStore.swift */,
+				167377AA2557720600EE2441 /* MockTaskEditorInteractor.swift */,
+				167377AE2557721400EE2441 /* MockTaskEditorPresenter.swift */,
+				167377B22557722100EE2441 /* MockTaskEditorDisplayer.swift */,
 			);
 			path = Mocks;
 			sourceTree = "<group>";
@@ -425,9 +437,13 @@
 				1673775E2557606C00EE2441 /* MockTaskListDisplayer.swift in Sources */,
 				1673775A2557606100EE2441 /* MockTaskListPresenter.swift in Sources */,
 				1673774F2557602400EE2441 /* TaskListPresenterTests.swift in Sources */,
+				167377A7255771FC00EE2441 /* MockTaskEditorDataStore.swift in Sources */,
+				167377AB2557720600EE2441 /* MockTaskEditorInteractor.swift in Sources */,
+				167377B32557722100EE2441 /* MockTaskEditorDisplayer.swift in Sources */,
 				167377A1255771C700EE2441 /* MockTaskListInteractor.swift in Sources */,
 				167377542557605600EE2441 /* MockTaskListDataStore.swift in Sources */,
 				167377492557601800EE2441 /* TaskListInteractorTests.swift in Sources */,
+				167377AF2557721400EE2441 /* MockTaskEditorPresenter.swift in Sources */,
 				16737797255771A700EE2441 /* TaskEditorInteractorTests.swift in Sources */,
 				1673779D255771B100EE2441 /* TaskEditorPresenterTests.swift in Sources */,
 			);

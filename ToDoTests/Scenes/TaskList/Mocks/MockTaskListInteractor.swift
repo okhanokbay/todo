@@ -10,7 +10,7 @@ import Foundation
 
 final class MockTaskListInteractor: TaskListBusinessLogic {
   var fetchTasksCallCount = 0
-  var fetchTasksReceivedRequest: TaskList.DeleteTask.Response?
+  var fetchTasksReceivedRequest: TaskList.FetchTasks.Request?
   
   func fetchTasks(request: TaskList.FetchTasks.Request) {
     fetchTasksCallCount += 1
