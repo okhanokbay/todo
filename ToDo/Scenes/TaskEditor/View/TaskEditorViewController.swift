@@ -28,6 +28,7 @@ final class TaskEditorViewController: UIViewController {
     
     configureNavigationItem()
     configureTextView()
+    setupInitials()
   }
   
   // MARK: Object lifecycle
@@ -58,7 +59,6 @@ final class TaskEditorViewController: UIViewController {
 // MARK: TaskEditorViewController Scoped Methods
 
 extension TaskEditorViewController {
-  
   func configureNavigationItem() {
     navigationItem.rightBarButtonItem = .init(barButtonSystemItem: .done, target: self, action: #selector(didTapDoneButton))
   }

@@ -34,6 +34,10 @@ enum TaskList {
     
     struct ViewModel {
       let cellViewModels: [TaskCellViewModel]
+      
+      init(response: Response) {
+        cellViewModels = response.tasks.map(TaskCellViewModel.init)
+      }
     }
   }
   

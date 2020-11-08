@@ -23,8 +23,12 @@ final class TaskListTableViewDataSource: NSObject, UITableViewDataSource {
   
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let cell = tableView.dequeueReusableCell(withIdentifier: Self.cellIdentifier, for: indexPath)
+    
     cell.textLabel?.text = cellViewModels[indexPath.row].description
+    
+    cell.textLabel?.numberOfLines = 0
     cell.accessoryType = .disclosureIndicator
+    
     return cell
   }
   
