@@ -11,8 +11,6 @@ import CoreData
 // MARK: - Core Data stack
 
 final class CoreDataStack {
-  // Not using a lazy container since we need the stack as early as possible after the app launch
-  
   static let shared: CoreDataStack = .init()
 
   var injectedContainer: NSPersistentContainer?
