@@ -20,10 +20,11 @@ protocol TaskListDisplayLogic: AnyObject {
 }
 
 final class TaskListViewController: UIViewController {
+  @IBOutlet private weak var tableView: UITableView!
+  
   private var interactor: TaskListBusinessLogic!
   private var router: TaskListRoutingLogic!
   
-  @IBOutlet private weak var tableView: UITableView!
   private var tableViewDataSource: TaskListTableViewDataSource!
   private var tableViewDelegate: TaskListTableViewDelegate!
   
