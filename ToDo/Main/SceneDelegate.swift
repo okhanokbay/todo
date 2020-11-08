@@ -15,7 +15,7 @@ final class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     
     window = UIWindow(windowScene: windowScene)
     
-    let loginViewController = TaskListViewController.loadFromNib()
+    let loginViewController = ServiceLocator.makeTaskListViewController()
     let navigationController = UINavigationController(rootViewController: loginViewController)
     
     window?.rootViewController = navigationController

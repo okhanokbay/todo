@@ -22,38 +22,11 @@ protocol TaskListDisplayLogic: AnyObject {
 final class TaskListViewController: UIViewController {
   @IBOutlet private weak var tableView: UITableView!
   
-  private var interactor: TaskListBusinessLogic!
-  private var router: TaskListRoutingLogic!
+  var interactor: TaskListBusinessLogic!
+  var router: TaskListRoutingLogic!
   
   private var tableViewDataSource: TaskListTableViewDataSource!
   private var tableViewDelegate: TaskListTableViewDelegate!
-  
-  // MARK: Object lifecycle
-  
-  override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
-    super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
-    setup()
-  }
-  
-  required init?(coder aDecoder: NSCoder) {
-    super.init(coder: aDecoder)
-    setup()
-  }
-  
-  // MARK: Setup
-  
-  private func setup() {
-    let dataStore = TaskListDataStore()
-    let presenter = TaskListPresenter(displayer: self)
-    let interactor = TaskListInteractor(dataStore: dataStore, presenter: presenter)
-    let router = TaskListRouter(viewController: self)
-    
-    self.interactor = interactor
-    self.router = router
-    
-    tableViewDataSource = TaskListTableViewDataSource(cellDeletionHandler: deleteCell)
-    tableViewDelegate = TaskListTableViewDelegate(cellSelectionHandler: selectedCell)
-  }
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -73,6 +46,10 @@ extension TaskListViewController {
   
   func configureTableView() {
     tableView.register(UITableViewCell.self, forCellReuseIdentifier: TaskListTableViewDataSource.cellIdentifier)
+    
+    tableViewDataSource = TaskListTableViewDataSource(cellDeletionHandler: deleteCell)
+    tableViewDelegate = TaskListTableViewDelegate(cellSelectionHandler: selectedCell)
+    
     tableView.dataSource = tableViewDataSource
     tableView.delegate = tableViewDelegate
   }

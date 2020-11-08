@@ -51,25 +51,22 @@ extension CoreDataStack {
 
 // MARK: Core Data Helper Methods
 
-extension CoreDataStack {
-  func fetchTasks() -> [Task] {
+extension CoreDataStack: PersistenceLayer {
+  func fetch() -> [Task] {
     let request = Task.createFetchRequest()
     return (try? persistentContainer.viewContext.fetch(request)) ?? []
   }
   
-  func saveTask(description: String) {
+  func save(text: String) {
     let task = Task(context: persistentContainer.viewContext)
-    task.taskDescription = description
-    saveContext()
+    task.taskDescription = text
   }
   
-  func update(task: Task, with description: String) {
-    task.taskDescription = description
-    saveContext()
+  func update(task: Task, with text: String) {
+    task.taskDescription = text
   }
   
   func delete(task: Task) {
     persistentContainer.viewContext.delete(task)
-    saveContext()
   }
 }

@@ -41,6 +41,8 @@
 		167377AB2557720600EE2441 /* MockTaskEditorInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 167377AA2557720600EE2441 /* MockTaskEditorInteractor.swift */; };
 		167377AF2557721400EE2441 /* MockTaskEditorPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 167377AE2557721400EE2441 /* MockTaskEditorPresenter.swift */; };
 		167377B32557722100EE2441 /* MockTaskEditorDisplayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 167377B22557722100EE2441 /* MockTaskEditorDisplayer.swift */; };
+		167377B72557FC1200EE2441 /* PersistenceLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 167377B62557FC1200EE2441 /* PersistenceLayer.swift */; };
+		167377C5255802A700EE2441 /* ServiceLocator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 167377C4255802A700EE2441 /* ServiceLocator.swift */; };
 		168AB4EF2557029B00C05DD2 /* TaskEditorViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 168AB4EE2557029B00C05DD2 /* TaskEditorViewController.xib */; };
 		1691C3392557111B001B40B4 /* TaskListTableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1691C3382557111B001B40B4 /* TaskListTableViewDataSource.swift */; };
 		1691C34A25572465001B40B4 /* Task+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1691C34825572465001B40B4 /* Task+CoreDataClass.swift */; };
@@ -96,6 +98,8 @@
 		167377AA2557720600EE2441 /* MockTaskEditorInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockTaskEditorInteractor.swift; sourceTree = "<group>"; };
 		167377AE2557721400EE2441 /* MockTaskEditorPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockTaskEditorPresenter.swift; sourceTree = "<group>"; };
 		167377B22557722100EE2441 /* MockTaskEditorDisplayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockTaskEditorDisplayer.swift; sourceTree = "<group>"; };
+		167377B62557FC1200EE2441 /* PersistenceLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceLayer.swift; sourceTree = "<group>"; };
+		167377C4255802A700EE2441 /* ServiceLocator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceLocator.swift; sourceTree = "<group>"; };
 		168AB4EE2557029B00C05DD2 /* TaskEditorViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TaskEditorViewController.xib; sourceTree = "<group>"; };
 		1691C3382557111B001B40B4 /* TaskListTableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListTableViewDataSource.swift; sourceTree = "<group>"; };
 		1691C34825572465001B40B4 /* Task+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Task+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
@@ -165,6 +169,7 @@
 				1691C34925572465001B40B4 /* Task+CoreDataProperties.swift */,
 				161548352556F0A400444B87 /* todo.xcdatamodeld */,
 				161548632556F11E00444B87 /* CoreDataStack.swift */,
+				167377B62557FC1200EE2441 /* PersistenceLayer.swift */,
 			);
 			path = PersistenceLayer;
 			sourceTree = "<group>";
@@ -195,6 +200,7 @@
 				161548772556FDFB00444B87 /* Extensions */,
 				161548622556F10C00444B87 /* PersistenceLayer */,
 				1673774225575C2F00EE2441 /* GlobalTypes.swift */,
+				167377C4255802A700EE2441 /* ServiceLocator.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -412,10 +418,12 @@
 				1691C34B25572465001B40B4 /* Task+CoreDataProperties.swift in Sources */,
 				161548882556FE7100444B87 /* TaskListModels.swift in Sources */,
 				1615482F2556F0A400444B87 /* SceneDelegate.swift in Sources */,
+				167377B72557FC1200EE2441 /* PersistenceLayer.swift in Sources */,
 				161548792556FE1200444B87 /* UIViewController+Extensions.swift in Sources */,
 				16196BB825574EDF00199F43 /* TaskListTableViewDelegate.swift in Sources */,
 				161548642556F11E00444B87 /* CoreDataStack.swift in Sources */,
 				1673778F255769B300EE2441 /* TaskEditorRouter.swift in Sources */,
+				167377C5255802A700EE2441 /* ServiceLocator.swift in Sources */,
 				1691C3392557111B001B40B4 /* TaskListTableViewDataSource.swift in Sources */,
 				161548372556F0A400444B87 /* todo.xcdatamodeld in Sources */,
 				161548852556FE7100444B87 /* TaskListPresenter.swift in Sources */,

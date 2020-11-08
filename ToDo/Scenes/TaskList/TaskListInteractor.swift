@@ -20,12 +20,15 @@ protocol TaskListBusinessLogic: AnyObject {
 }
 
 final class TaskListInteractor {
+  private let persistenceLayer: PersistenceLayer
   private let dataStore: TaskListDataStoreProtocol
   private let presenter: TaskListPresentationLogic
   
-  init(dataStore: TaskListDataStoreProtocol,
+  init(persistenceLayer: PersistenceLayer,
+       dataStore: TaskListDataStoreProtocol,
        presenter: TaskListPresentationLogic) {
     
+    self.persistenceLayer = persistenceLayer
     self.dataStore = dataStore
     self.presenter = presenter
   }
@@ -35,7 +38,7 @@ final class TaskListInteractor {
 
 extension TaskListInteractor: TaskListBusinessLogic {
   func fetchTasks(request: TaskList.FetchTasks.Request) {
-    let tasks = CoreDataStack.shared.fetchTasks()
+    let tasks = persistenceLayer.fetch()
     dataStore.tasks = tasks
     
     let response = TaskList.FetchTasks.Response(tasks: tasks)
@@ -57,8 +60,8 @@ extension TaskListInteractor: TaskListBusinessLogic {
   
   func deleteTask(request: TaskList.DeleteTask.Request) {
     let taskToDelete = dataStore.tasks[request.index]
-    CoreDataStack.shared.delete(task: taskToDelete)
-    dataStore.tasks = CoreDataStack.shared.fetchTasks()
+    persistenceLayer.delete(task: taskToDelete)
+    dataStore.tasks = persistenceLayer.fetch()
     
     let response = TaskList.DeleteTask.Response(tasks: dataStore.tasks)
     presenter.presentTaskDeletion(response: response)
@@ -75,7 +78,7 @@ extension TaskListInteractor {
       return
     }
     
-    CoreDataStack.shared.saveTask(description: description)
+    persistenceLayer.save(text: description)
     updateTasks()
   }
   
@@ -91,13 +94,13 @@ extension TaskListInteractor {
       return
     }
     
-    CoreDataStack.shared.update(task: editingTask, with: description)
+    persistenceLayer.update(task: editingTask, with: description)
     updateTasks()
     dataStore.editingTask = nil
   }
   
   func updateTasks() {
-    dataStore.tasks = CoreDataStack.shared.fetchTasks()
+    dataStore.tasks = persistenceLayer.fetch()
     
     let response = TaskList.FetchTasks.Response(tasks: dataStore.tasks)
     presenter.presentTasks(response: response)

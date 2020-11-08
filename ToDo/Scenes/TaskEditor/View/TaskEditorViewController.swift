@@ -20,7 +20,7 @@ protocol TaskEditorDisplayLogic: AnyObject {
 final class TaskEditorViewController: UIViewController {
   @IBOutlet private weak var textView: UITextView!
   
-  private var interactor: TaskEditorBusinessLogic!
+  var interactor: TaskEditorBusinessLogic!
   var router: (TaskEditorRoutingLogic & TaskEditorDataPassing)!
   
   override func viewDidLoad() {
@@ -29,30 +29,6 @@ final class TaskEditorViewController: UIViewController {
     configureNavigationItem()
     configureTextView()
     setupInitials()
-  }
-  
-  // MARK: Object lifecycle
-  
-  override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
-    super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
-    setup()
-  }
-  
-  required init?(coder aDecoder: NSCoder) {
-    super.init(coder: aDecoder)
-    setup()
-  }
-  
-  // MARK: Setup
-  
-  private func setup() {
-    let dataStore = TaskEditorDataStore()
-    let presenter = TaskEditorPresenter(displayer: self)
-    let interactor = TaskEditorInteractor(dataStore: dataStore, presenter: presenter)
-    let router = TaskEditorRouter(dataStore: dataStore, viewController: self)
-    
-    self.interactor = interactor
-    self.router = router
   }
 }
 
