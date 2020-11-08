@@ -60,13 +60,16 @@ extension CoreDataStack: PersistenceLayer {
   func save(text: String) {
     let task = Task(context: persistentContainer.viewContext)
     task.taskDescription = text
+    saveContext()
   }
   
   func update(task: Task, with text: String) {
     task.taskDescription = text
+    saveContext()
   }
   
   func delete(task: Task) {
     persistentContainer.viewContext.delete(task)
+    saveContext()
   }
 }
