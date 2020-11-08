@@ -10,6 +10,4 @@ import Foundation
 import CoreData
 
 @objc(Task)
-public class Task: NSManagedObject {
-
-}
+public class Task: NSManagedObject {}

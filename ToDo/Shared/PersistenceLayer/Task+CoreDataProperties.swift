@@ -1,8 +1,8 @@
 //
 //  Task+CoreDataProperties.swift
-//  todo
+//  ToDo
 //
-//  Created by Okhan Okbay on 7.11.2020.
+//  Created by Okhan Okbay on 8.11.2020.
 //
 //
 
@@ -15,4 +15,5 @@ extension Task {
   }
   
   @NSManaged public var taskDescription: String
+  @NSManaged public var recordDate: Date
 }
