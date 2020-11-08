@@ -9,6 +9,6 @@
 import Foundation
 
 final class MockTaskListDataStore: TaskListDataStoreProtocol {
-  var tasks: [Task] = []
-  var editingTask: Task?
+  var tasks: [TaskObject] = []
+  var editingTask: TaskObject?
 }

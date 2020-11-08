@@ -19,15 +19,26 @@ final class MockTask: TaskObject {
     self.taskDescription = taskDescription
     self.recordDate = recordDate
   }
+  
+  static func makeTasks(count: Int) -> [MockTask] {
+    (0..<count).map { MockTask(taskDescription: "Task\($0)", recordDate: Date()) }
+  }
+}
+
+extension MockTask: Equatable {
+  static func == (lhs: MockTask, rhs: MockTask) -> Bool {
+    return lhs.taskDescription == rhs.taskDescription
+  }
 }
 
 final class MockPersistenceLayer: PersistenceLayer {
+  var currentTasks: [TaskObject] = []
+  
   var fetchCallCount = 0
   
   func fetch() -> [TaskObject] {
     fetchCallCount += 1
-    
-    return (0..<10).map { MockTask(taskDescription: "Task\($0)", recordDate: Date()) }
+    return currentTasks
   }
   
   var saveCallCount = 0
@@ -36,6 +47,7 @@ final class MockPersistenceLayer: PersistenceLayer {
   func save(text: String) {
     saveCallCount += 1
     saveReceivedText = text
+    currentTasks.append(MockTask(taskDescription: text, recordDate: Date()))
   }
   
   var updateCallCount = 0
@@ -46,6 +58,10 @@ final class MockPersistenceLayer: PersistenceLayer {
     updateCallCount += 1
     updateReceivedTask = task
     updateReceivedText = text
+
+    if let index = currentTasks.firstIndex(where: { $0.recordDate == task.recordDate }) {
+      currentTasks[index] = MockTask(taskDescription: text, recordDate: Date())
+    }
   }
   
   var deleteCallCount = 0
@@ -54,6 +70,8 @@ final class MockPersistenceLayer: PersistenceLayer {
   func delete(task: TaskObject) {
     deleteCallCount += 1
     deleteReceivedTask = task
+
+    currentTasks.removeAll(where: { $0.recordDate == task.recordDate })
   }
 }
 
