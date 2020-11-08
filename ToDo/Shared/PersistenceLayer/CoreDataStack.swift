@@ -13,26 +13,30 @@ import CoreData
 final class CoreDataStack {
   // Not using a lazy container since we need the stack as early as possible after the app launch
   
-  static let shared: CoreDataStack = .init(container: .init(name: "todo"))
+  static let shared: CoreDataStack = .init()
+
+  var injectedContainer: NSPersistentContainer?
   
-  let container: NSPersistentContainer
-  
-  init(container: NSPersistentContainer) {
-    self.container = container
+  lazy var persistentContainer: NSPersistentContainer = {
+    if let injectedContainer = injectedContainer {
+      return injectedContainer
+    }
     
+    let container: NSPersistentContainer = .init(name: "todo")
     container.loadPersistentStores(completionHandler: { (_, error) in
       if let error = error {
         self.handleError(error)
       }
     })
-  }
+    return container
+  }()
 }
 
 // MARK: - Core Data Saving support
 
 extension CoreDataStack {
   func saveContext () {
-    let context = container.viewContext
+    let context = persistentContainer.viewContext
     if context.hasChanges {
       do {
         try context.save()
@@ -52,11 +56,11 @@ extension CoreDataStack {
 extension CoreDataStack {
   func fetchTasks() -> [Task] {
     let request = Task.createFetchRequest()
-    return (try? container.viewContext.fetch(request)) ?? []
+    return (try? persistentContainer.viewContext.fetch(request)) ?? []
   }
   
   func saveTask(description: String) {
-    let task = Task(context: container.viewContext)
+    let task = Task(context: persistentContainer.viewContext)
     task.taskDescription = description
     saveContext()
   }
@@ -67,7 +71,7 @@ extension CoreDataStack {
   }
   
   func delete(task: Task) {
-    container.viewContext.delete(task)
+    persistentContainer.viewContext.delete(task)
     saveContext()
   }
 }
