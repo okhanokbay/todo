@@ -17,27 +17,27 @@ final class MockTaskListDisplayer: TaskListDisplayLogic {
     displayTasksReceivedViewModel = viewModel
   }
   
-  var displayNewTextAdditionCallCount = 0
-  var displayNewTextAdditionReceivedViewModel: TaskList.AddNewTask.ViewModel?
+  var displayNewTaskAdditionCallCount = 0
+  var displayNewTaskAdditionReceivedViewModel: TaskList.AddNewTask.ViewModel?
   
   func displayNewTaskAddition(viewModel: TaskList.AddNewTask.ViewModel) {
-    displayNewTextAdditionCallCount += 1
-    displayNewTextAdditionReceivedViewModel = viewModel
+    displayNewTaskAdditionCallCount += 1
+    displayNewTaskAdditionReceivedViewModel = viewModel
   }
   
-  var displayTextEditingCallCount = 0
-  var displayTextEditingReceivedViewModel: TaskList.EditTask.ViewModel?
+  var displayTaskEditingCallCount = 0
+  var displayTaskEditingReceivedViewModel: TaskList.EditTask.ViewModel?
   
   func displayTaskEditing(viewModel: TaskList.EditTask.ViewModel) {
-    displayTextEditingCallCount += 1
-    displayTextEditingReceivedViewModel = viewModel
+    displayTaskEditingCallCount += 1
+    displayTaskEditingReceivedViewModel = viewModel
   }
   
-  var displayTextDeletionCallCount = 0
+  var displayTaskDeletionCallCount = 0
   var displayTaskDeletionReceivedViewModel: TaskList.DeleteTask.ViewModel?
   
   func displayTaskDeletion(viewModel: TaskList.DeleteTask.ViewModel) {
-    displayTextDeletionCallCount += 1
+    displayTaskDeletionCallCount += 1
     displayTaskDeletionReceivedViewModel = viewModel
   }
 }

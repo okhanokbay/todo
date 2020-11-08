@@ -12,3 +12,9 @@ final class MockTaskListDataStore: TaskListDataStoreProtocol {
   var tasks: [TaskObject] = []
   var editingTask: TaskObject?
 }
+
+extension TaskList.TaskCellViewModel: Equatable {
+  public static func == (lhs: TaskList.TaskCellViewModel, rhs: TaskList.TaskCellViewModel) -> Bool {
+    return lhs.labelText == rhs.labelText
+  }
+}
